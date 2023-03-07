@@ -17,4 +17,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 
     Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 
+    Route::get('home', [AuthController::class, 'home'])->name('home');
+
 });
