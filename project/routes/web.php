@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController;
+// use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 
         // Dashboard Home
         Route::get('home', [AuthController::class, 'home'])->name('home');
+
+        Route::get('users/team', [\App\Http\Controllers\Admin\UserController::class, 'team'])->name('users.team');
+        Route::resource('users', UserController::class);
     });
 
     // Logout
